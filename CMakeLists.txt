@@ -9,11 +9,14 @@ include(lib/pico-sdk/pico_sdk_init.cmake)
 project(${PRJ_NAME})
 pico_sdk_init()
 
+add_subdirectory(lib/picodisplay-c-driver)
+
 add_executable(${PRJ_NAME})
 pico_add_extra_outputs(${PRJ_NAME})
 
 target_link_libraries(${PRJ_NAME}
   pico_stdlib
+  picodisplay-c-driver
 )
 
 add_subdirectory(src)
